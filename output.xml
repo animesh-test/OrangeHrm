@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1 (Python 3.10.12 on linux)" generated="2024-11-19T14:57:28.455943" rpa="false" schemaversion="5">
+<suite id="s1" name="Pim" source="/home/araj17/PycharmProjects/robot_testing/pim.robot">
+<test id="s1-t1" name="Login to OrangeHRM" line="12">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:28.530385" level="INFO">Opening browser 'Chrome' to base url 'https://opensource-demo.orangehrmlive.com/web/index.php/auth/login'.</msg>
+<arg>${URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-11-19T14:57:28.530177" elapsed="3.831856"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2024-11-19T14:57:32.362348" elapsed="0.018691"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>//input[@name="username"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-11-19T14:57:32.381313" elapsed="0.453368"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:32.835461" level="INFO">Typing text 'Admin' into text field '//input[@name="username"]'.</msg>
+<arg>//input[@name="username"]</arg>
+<arg>${USERNAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:32.835063" elapsed="0.048649"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:32.884180" level="INFO">Typing text 'admin123' into text field '//input[@name="password"]'.</msg>
+<arg>//input[@name="password"]</arg>
+<arg>${PASSWORD}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:32.883940" elapsed="0.060435"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:32.944953" level="INFO">Clicking button '//button[@type="submit"]'.</msg>
+<arg>//button[@type="submit"]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:32.944658" elapsed="1.064591"/>
+</kw>
+<kw name="Wait Until Page Contains Element" owner="SeleniumLibrary">
+<arg>//span[text()="Dashboard"]</arg>
+<arg>10s</arg>
+<doc>Waits until the element ``locator`` appears on the current page.</doc>
+<status status="PASS" start="2024-11-19T14:57:34.009532" elapsed="0.436385"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-19T14:57:39.447603" level="INFO">Slept 5 seconds.</msg>
+<arg>5s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-19T14:57:34.446665" elapsed="5.001331"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:39.449365" level="INFO">Clicking element '//span[text()='PIM']'.</msg>
+<arg>//span[text()='PIM']</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:39.448753" elapsed="0.738651"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-19T14:57:43.188157" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-19T14:57:40.187625" elapsed="3.000926"/>
+</kw>
+<kw name="Get Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:43.229638" level="INFO">${EXTRACTED_TEXT} = 123 12</msg>
+<var>${EXTRACTED_TEXT}</var>
+<arg>(//div[@class="oxd-table-cell oxd-padding-cell"]//div)[4]</arg>
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:43.189280" elapsed="0.040475"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:43.230838" level="INFO">Typing text '123 12' into text field '(//input[@placeholder='Type for hints...'])[1]'.</msg>
+<arg>(//input[@placeholder='Type for hints...'])[1]</arg>
+<arg>${EXTRACTED_TEXT}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:43.230326" elapsed="0.072143"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-19T14:57:46.303361" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-19T14:57:43.302815" elapsed="3.000868"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:46.304864" level="INFO">Clicking element '//span[contains(text(), '123 12')]'.</msg>
+<arg>//span[contains(text(), '${EXTRACTED_TEXT}')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:46.304259" elapsed="0.071582"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-19T14:57:49.377024" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-19T14:57:46.376330" elapsed="3.001085"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:49.378608" level="INFO">Typing text '0360' into text field '(//input[@class='oxd-input oxd-input--active'])[2]'.</msg>
+<arg>(//input[@class='oxd-input oxd-input--active'])[2]</arg>
+<arg>0360</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:49.378053" elapsed="0.099225"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-19T14:57:52.478178" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-19T14:57:49.477656" elapsed="3.000876"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:52.480174" level="INFO">Clicking element '(//div[@tabindex='0' and text()='-- Select --'])[1]'.</msg>
+<arg>(//div[@tabindex='0' and text()='-- Select --'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-11-19T14:57:52.479505" elapsed="0.053100"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-11-19T14:57:55.533521" level="INFO">Slept 3 seconds.</msg>
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-11-19T14:57:52.532926" elapsed="3.000977"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-11-19T14:57:55.535252" level="INFO">Clicking element '//span[contains(text(), 'Freelance')]'.</msg>
+<msg time="2024-11-19T14:57:55.659095" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-40.png"&gt;&lt;img src="selenium-screenshot-40.png" width="800px"&gt;&lt;/a&gt;</msg>
+<msg time="2024-11-19T14:57:55.659256" level="FAIL">Element with locator '//span[contains(text(), 'Freelance')]' not found.</msg>
+<arg>//span[contains(text(), 'Freelance')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="FAIL" start="2024-11-19T14:57:55.534657" elapsed="0.125061">Element with locator '//span[contains(text(), 'Freelance')]' not found.</status>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.659975" elapsed="0.000033"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//div[@class='oxd-select-text-input'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660114" elapsed="0.000022"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660222" elapsed="0.000018"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//span[contains(text(), 'Current and Past Employees')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660319" elapsed="0.000016"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660403" elapsed="0.000043"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<arg>(//input[@placeholder='Type for hints...'])[2]</arg>
+<arg>jam</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660548" elapsed="0.000018"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660638" elapsed="0.000017"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//span[contains(text(), 'James')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660727" elapsed="0.000015"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660806" elapsed="0.000016"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//div[text()='-- Select --'])[1]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660889" elapsed="0.000014"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.660966" elapsed="0.000015"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//span[contains(text(), 'Cyber security ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661048" elapsed="0.000015"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661124" elapsed="0.000015"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>(//div[text()='-- Select --'])[2]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661221" elapsed="0.000015"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661299" elapsed="0.000014"/>
+</kw>
+<kw name="Click Element" owner="SeleniumLibrary">
+<arg>//span[contains(text(), 'Engineering')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661380" elapsed="0.000015"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>3s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661458" elapsed="0.000015"/>
+</kw>
+<kw name="Click Button" owner="SeleniumLibrary">
+<arg>//button[contains(text(), 'Search')]</arg>
+<doc>Clicks the button identified by ``locator``.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661538" elapsed="0.000015"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<arg>10s</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="NOT RUN" start="2024-11-19T14:57:55.661614" elapsed="0.000015"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-11-19T14:57:55.661840" elapsed="0.063910"/>
+</kw>
+<status status="FAIL" start="2024-11-19T14:57:28.529607" elapsed="27.196288">Element with locator '//span[contains(text(), 'Freelance')]' not found.</status>
+</test>
+<status status="FAIL" start="2024-11-19T14:57:28.456499" elapsed="27.269791"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Pim">Pim</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
